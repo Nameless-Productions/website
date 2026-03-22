@@ -49,9 +49,9 @@ export default function CursedCalculator() {
                 <NumberBtn number='9' result={result} setResult={setResult}/>
                 <NumberBtn number='0' result={result} setResult={setResult}/>
 
-                <button className='border-2 border-black p-6 rounded-xl bg-gray-500 cursor-pointer hover:bg-gray-600 transition-all duration-300'><p className='text-3xl font-bold' onClick={() => setResult("")}>Cls</p></button>
+                <button className='border-2 border-black p-6 rounded-xl bg-gray-500 cursor-pointer hover:bg-gray-600 transition-all duration-300' onClick={() => setResult("")}><p className='text-3xl font-bold'>Cls</p></button>
 
-                <button className='border-2 border-black p-6 rounded-xl bg-gray-500 cursor-pointer hover:bg-gray-600 transition-all duration-300'><p className='text-3xl font-bold' onClick={handleEquals}>=</p></button>
+                <button className='border-2 border-black p-6 rounded-xl bg-gray-500 cursor-pointer hover:bg-gray-600 transition-all duration-300' onClick={handleEquals}><p className='text-3xl font-bold'>=</p></button>
                 
             </div>
 
@@ -68,6 +68,6 @@ function NumberBtn({ number, result, setResult }: { number: string, result: any,
     }
 
   return (
-    <button className='border-2 border-black p-6 rounded-xl bg-gray-600 cursor-pointer hover:bg-gray-700 transition-all duration-300'><p className='text-3xl font-bold' onClick={() => handleClick(number)}>{number}</p></button>
+    <button className='border-2 border-black p-6 rounded-xl bg-gray-600 cursor-pointer hover:bg-gray-700 transition-all duration-300' onClick={() => handleClick(number)}><p className='text-3xl font-bold'>{number}</p></button>
   )
 }
