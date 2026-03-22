@@ -6,10 +6,18 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "Nameless Productions",
   description: "This is the website of Nameless Productions. There are some cool projects and more!",
-  icons: "https://thenamelessdev.com/logo",
+  icons: "https://thenamelessdev.com/logo.svg",
   openGraph: {
     title: "Nameless Productions",
     description: "This is the website of Nameless Productions. There are some cool projects and more!",
+    images: [
+      {
+        url: "https://thenamelessdev.com/logo.svg",
+        width: 628,
+        height: 562,
+        alt: "Nameless Productions Logo",
+      }
+    ],
   }
 }
 
