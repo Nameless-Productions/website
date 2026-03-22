@@ -1,6 +1,17 @@
 import React from 'react'
 import "./globals.css";
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Nameless Productions",
+  description: "This is the website of Nameless Productions. There are some cool projects and more!",
+  icons: "https://thenamelessdev.com/logo",
+  openGraph: {
+    title: "Nameless Productions",
+    description: "This is the website of Nameless Productions. There are some cool projects and more!",
+  }
+}
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   const pageClass = "text-white font-bold text-lg cursor-pointer transition-all duration-300 hover:text-gray-500";
