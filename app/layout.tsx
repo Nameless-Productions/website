@@ -26,8 +26,10 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang='en'>
       <body className='bg-gray-800'>
-        <nav className='flex border-b p-3 space-x-5 border-white bg-black'>
+        <nav className='flex border-b p-3 space-x-5 border-white bg-black items-center'>
           <Link href="/"><p className='text-white text-2xl font-bold hover:text-gray-500 duration-300 transition-all'>Nameless Productions</p></Link>
+
+          <a href="https://github.com/nameless-Productions/website" target='_blank' className={pageClass}>GitHub</a>
 
           <div className='ml-auto flex space-x-5'>
             <Link href="/"><p className={pageClass}>Home</p></Link>
