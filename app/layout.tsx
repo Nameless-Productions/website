@@ -2,6 +2,7 @@ import React from 'react'
 import "./globals.css";
 import Link from 'next/link';
 import { Metadata } from 'next';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: "Nameless Productions",
@@ -27,6 +28,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     <html lang='en'>
       <body className='bg-gray-800'>
         <nav className='flex border-b p-3 space-x-5 border-white bg-black items-center'>
+          <Image src="/logo.svg" alt='logo' width={50} height={50}></Image>
           <Link href="/"><p className='text-white text-2xl font-bold hover:text-gray-500 duration-300 transition-all'>Nameless Productions</p></Link>
 
           <a href="https://github.com/nameless-Productions/website" target='_blank' className={pageClass}>GitHub</a>
