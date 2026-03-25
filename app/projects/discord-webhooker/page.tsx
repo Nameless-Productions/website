@@ -47,14 +47,49 @@ export default function DiscordWebhooker() {
 
             <br />
 
-            <textarea className={inputClass} rows={5} value={content} onChange={(e) => setContent(e.target.value)}></textarea>
+            <textarea className={inputClass} placeholder='Content' rows={5} value={content} onChange={(e) => setContent(e.target.value)}></textarea>
 
             <br />
             <p className='text-red-500'>{error}</p>
             <br />
             <p className='text-green-400'>{succesMsg}</p>
             <br />
+            <EmbedCreator embeds={embeds} setEmbeds={setEmbeds} />
+            <br />
             <button className='border-2 border-black bg-green-600 w-full rounded-xl cursor-pointer active:bg-green-700 transition-all duration-300' onClick={handleSend}>Send</button>
         </div>
     </>)
+}
+
+
+function EmbedCreator({embeds, setEmbeds}: {embeds: any, setEmbeds: any}){
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+
+    function handleSubmit(){
+        if(title === "" || description === "") return;
+        
+        setEmbeds([...embeds, {title: title, description: description}]);
+        setTitle("");
+        setDescription("");
+    }
+
+
+    return(<>
+        <hr />
+        <p className='font-bold'>Embed creator</p>
+        <input type="text" className={inputClass} placeholder='Title' value={title} onChange={(e) => setTitle(e.target.value)} />
+        <br />
+        <textarea placeholder='Description' className={inputClass} rows={5} value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+        <br />
+        <button className="bg-green-400 p-1 m-2 rounded-xl cursor-pointer hover:bg-green-500 transition-all duration-300" onClick={handleSubmit}>Add Embed</button>
+        <hr />
+        <p className='font-bold'>Embeds:</p>
+        <ul className='list-disc list-inside'>
+            {embeds.map((embed: any, index: number) => (
+                <li key={index}>{embed.title}</li>
+            ))}
+        </ul>
+        <hr />
+    </>);
 }
