@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id        Int    @id @default(autoincrement())
+  username  String @unique
+  email     String
+  password  String // a password hash
+  apiSecret String // a random string with the sercret for decoding the api key
+}
