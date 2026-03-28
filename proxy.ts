@@ -10,7 +10,9 @@ export default async function Proxy(req: NextRequest) {
 
     const verify = await verifyToken(token);
     if(!verify) return NextResponse.redirect(new URL("/login", req.url), 302);
-    return NextResponse.next();
+    const response = NextResponse.next();
+    response.headers.set("x-username", verify.username!);
+    return response;
 }
 
 export const config: ProxyConfig = {
