@@ -7,6 +7,9 @@ const secret = process.env.SECRET || "im missing";
 export async function createToken(payload: {uid: number, username: string}){
     return jwt.sign(payload, secret, {expiresIn: "7d"});
 }
+export async function createInfiniteToken(payload: {uid: number, username: string}) {
+    return jwt.sign(payload, secret);
+}
 
 export async function decodeJwt(jwtToken: string){
     return jwt.decode(jwtToken) as {uid?: number, username?: string};

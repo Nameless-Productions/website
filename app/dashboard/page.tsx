@@ -1,5 +1,6 @@
-import { redBtnClass } from '@/vars';
+import { greenBtnClass, redBtnClass } from '@/vars';
 import { cookies, headers } from 'next/headers';
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import React from 'react'
 
@@ -17,5 +18,8 @@ export default async function Dashboard() {
     <form action={logout} className='mt-3'>
       <input type="submit" value="Log out" className={redBtnClass} />
     </form>
+    <br />
+    <Link className={greenBtnClass} href="/dashboard/api">Manage API keys</Link>
+    <br />
   </>)
 }
