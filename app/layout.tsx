@@ -3,6 +3,7 @@ import "./globals.css";
 import Link from 'next/link';
 import { Metadata } from 'next';
 import Image from 'next/image';
+import { cookies } from 'next/headers';
 
 export const metadata: Metadata = {
   title: "Nameless Productions",
@@ -22,8 +23,11 @@ export const metadata: Metadata = {
   }
 }
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default async function RootLayout({children}: {children: React.ReactNode}) {
   const pageClass = "text-white font-bold text-lg cursor-pointer transition-all duration-300 hover:text-gray-500";
+  const cookieStore = await cookies();
+  const token = cookieStore.get("token")?.value;
+
   return (
     <html lang='en'>
       <body className='bg-gray-800'>
@@ -36,6 +40,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           <div className='ml-auto flex space-x-5'>
             <Link href="/"><p className={pageClass}>Home</p></Link>
             <Link href="/projects" className={pageClass}>Projects</Link>
+            <Link href="/dashboard" className={pageClass}>{token ? "Dashboard" : "Login"}</Link>
           </div>
         </nav>
         <main className='m-3 text-white'>
