@@ -1,5 +1,6 @@
 import { loginForm } from '@/lib/users/login'
 import { greenBtnClass, inputClass } from '@/vars'
+import Link from 'next/link'
 import React from 'react'
 
 export default function RegisterPage() {
@@ -15,6 +16,8 @@ export default function RegisterPage() {
             <br />
             <input type="submit" value="Log in" className={greenBtnClass} />
         </form>
+        <br />
+        <p>Don't have an account? Register <Link href="/register" className='underline text-blue-500'>Here</Link></p>
     </div>
   </>)
 }
