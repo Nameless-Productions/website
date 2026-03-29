@@ -4,5 +4,5 @@ import { NextResponse } from "next/server";
 export async function GET(req: Request) {
     const cookieStore = await cookies();
     cookieStore.delete("token");
-    return NextResponse.redirect(new URL("/", req.url), 302);;
+    return NextResponse.redirect("/", 302);
 }
