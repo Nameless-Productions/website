@@ -1,4 +1,3 @@
-import { greenBtnClass, redBtnClass } from '@/vars';
 import { cookies, headers } from 'next/headers';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
@@ -16,10 +15,10 @@ export default async function Dashboard() {
   return (<>
     <p className='text-lg font-bold'>Hello, {username}!</p>
     <form action={logout} className='mt-3'>
-      <input type="submit" value="Log out" className={redBtnClass} />
+      <input type="submit" value="Log out" className="redBtn" />
     </form>
     <br />
-    <Link className={greenBtnClass} href="/dashboard/api">Manage API keys</Link>
+    <Link className="greenBtn" href="/dashboard/api">Manage API keys</Link>
     <br />
   </>)
 }

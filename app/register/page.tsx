@@ -1,5 +1,4 @@
 import { createUserForm } from '@/lib/users/createUser'
-import { greenBtnClass, inputClass } from '@/vars'
 import Link from 'next/link'
 import React from 'react'
 
@@ -9,15 +8,15 @@ export default function RegisterPage() {
         <p className='text-xl font-bold'>Register</p>
         <form action={createUserForm}>
             <label htmlFor="username">Username:</label>
-            <input type="text" className={inputClass} id='username' name='username' required  placeholder='thenamelessdev'/>
+            <input type="text" className="input" id='username' name='username' required  placeholder='thenamelessdev'/>
             <br />
             <label htmlFor="email">Email address</label>
-            <input type="email" className={inputClass} id='email' name='email' placeholder='nameless@thenamelessdev.com' required />
+            <input type="email" className="input" id='email' name='email' placeholder='nameless@thenamelessdev.com' required />
             <br />
             <label htmlFor="password">Password</label>
-            <input type="password" className={inputClass} id='password' name='password' required />
+            <input type="password" className="input" id='password' name='password' required />
             <br />
-            <input type="submit" value="Register" className={greenBtnClass} />
+            <input type="submit" value="Register" className="greenBtn" />
         </form>
         <br />
         <p>Have an account? Log in <Link href="/login" className='underline text-blue-500'>Here</Link></p>

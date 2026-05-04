@@ -1,6 +1,5 @@
 "use client";
 
-import { inputClass } from '@/vars'
 import React, { useRef, useState } from 'react'
 
 export default function DiscordWebhooker() {
@@ -43,11 +42,11 @@ export default function DiscordWebhooker() {
         <br />
         
         <div className='border-2 border-black bg-gray-900 w-fit rounded-2xl p-5'>
-            <input type="text" className={inputClass} placeholder='https://discord.com/api/v10/webhooks/id/token' value={url} onChange={(e) => setUrl(e.target.value)} />
+            <input type="text" className="input" placeholder='https://discord.com/api/v10/webhooks/id/token' value={url} onChange={(e) => setUrl(e.target.value)} />
 
             <br />
 
-            <textarea className={inputClass} placeholder='Content' rows={5} value={content} onChange={(e) => setContent(e.target.value)}></textarea>
+            <textarea className="input" placeholder='Content' rows={5} value={content} onChange={(e) => setContent(e.target.value)}></textarea>
 
             <br />
             <p className='text-red-500'>{error}</p>
@@ -78,9 +77,9 @@ function EmbedCreator({embeds, setEmbeds}: {embeds: any, setEmbeds: any}){
     return(<>
         <hr />
         <p className='font-bold'>Embed creator</p>
-        <input type="text" className={inputClass} placeholder='Title' value={title} onChange={(e) => setTitle(e.target.value)} />
+        <input type="text" className="input" placeholder='Title' value={title} onChange={(e) => setTitle(e.target.value)} />
         <br />
-        <textarea placeholder='Description' className={inputClass} rows={5} value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+        <textarea placeholder='Description' className="input" rows={5} value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
         <br />
         <button className="bg-green-400 p-1 m-2 rounded-xl cursor-pointer hover:bg-green-500 transition-all duration-300" onClick={handleSubmit}>Add Embed</button>
         <hr />
