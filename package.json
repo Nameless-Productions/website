@@ -31,5 +31,15 @@
     "prisma": "^7.6.0",
     "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@prisma/engines",
+      "bcrypt",
+      "better-sqlite3",
+      "prisma",
+      "sharp",
+      "unrs-resolver"
+    ]
   }
 }
