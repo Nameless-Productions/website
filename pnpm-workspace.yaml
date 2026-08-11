@@ -1,7 +1,0 @@
-onlyBuiltDependencies:
-  - "@prisma/engines"
-  - bcrypt
-  - better-sqlite3
-  - prisma
-  - sharp
-  - unrs-resolver
